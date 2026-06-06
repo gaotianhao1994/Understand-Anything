@@ -39,6 +39,7 @@ $Platforms = [ordered]@{
     cline       = @{ Target = (Join-Path $HOME '.cline\skills');              Style = 'folder' }
     kimi        = @{ Target = (Join-Path $HOME '.kimi\skills');               Style = 'folder' }
     trae        = @{ Target = (Join-Path $HOME '.trae\skills');               Style = 'per-skill' }
+    'trae-cn'   = @{ Target = (Join-Path $HOME '.trae-cn\skills');            Style = 'per-skill' }
 }
 
 function Show-Usage {
