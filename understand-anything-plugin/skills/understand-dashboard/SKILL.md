@@ -82,9 +82,21 @@ Start the Understand Anything dashboard to visualize the knowledge graph for the
    ```
 
 5. Start the Vite dev server pointing at the project's knowledge graph:
-   ```bash
-   cd <dashboard-dir> && GRAPH_DIR=<project-dir> npx vite --host 127.0.0.1
+   **IMPORTANT: Use the bundled launcher script — do NOT manually `cd` and run `npx vite`.**
+   The launcher automatically resolves symlinks (Windows Junction, Unix symlink) to their
+   real filesystem paths, which prevents a known esbuild pre-transform failure that causes
+   a blank page when the plugin root is installed as a symlink.
+
+   **Windows:**
+   ```batch
+   <dashboard-dir>\start.cmd <project-dir>
    ```
+
+   **Linux/macOS:**
+   ```bash
+   <dashboard-dir>/start.sh <project-dir>
+   ```
+
    Run this in the background so the user can continue working.
 
 6. **Capture the access token URL from the server output.** The Vite server prints a line like:
